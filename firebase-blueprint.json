@@ -1,0 +1,59 @@
+{
+  "entities": {
+    "arrematante": {
+      "title": "Arrematante",
+      "description": "Dados cadastrais e documentação comprobatória do arrematante",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Identificador do arrematante (ARR-XXXXX)" },
+        "nome": { "type": "string", "description": "Nome completo ou Razão Social" },
+        "documento": { "type": "string", "description": "CPF ou CNPJ formatado" },
+        "documentoLimpo": { "type": "string", "description": "Apenas dígitos do documento" },
+        "rgIe": { "type": "string", "description": "RG ou Inscrição Estadual" },
+        "dataNascimento": { "type": "string", "description": "Data de nascimento" },
+        "email": { "type": "string", "description": "E-mail cadastrado" },
+        "telefone": { "type": "string", "description": "Telefone / WhatsApp com DDD" },
+        "cep": { "type": "string", "description": "CEP" },
+        "endereco": { "type": "string", "description": "Logradouro, número e complemento" },
+        "cidade": { "type": "string", "description": "Município" },
+        "uf": { "type": "string", "description": "Estado / UF" },
+        "tipoPessoa": { "type": "string", "enum": ["fisica", "juridica"] },
+        "status": { "type": "string", "enum": ["habilitado", "pendente_documentos"] },
+        "docFrente": { "type": "string", "description": "Foto/Arquivo do documento frente" },
+        "docVerso": { "type": "string", "description": "Foto/Arquivo do documento verso" },
+        "docSelfie": { "type": "string", "description": "Foto da pessoa segurando o documento oficial" },
+        "documentosCompletos": { "type": "boolean", "description": "Se os 3 documentos foram anexados" },
+        "termoAceito": { "type": "boolean" },
+        "limiteCredito": { "type": "number" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "nome", "documento", "email"]
+    },
+    "lance": {
+      "title": "Lance de Leilão",
+      "description": "Oferta formal registrada em um lote",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "lotId": { "type": "string" },
+        "loteNum": { "type": "string" },
+        "arrematanteId": { "type": "string" },
+        "arrematanteNome": { "type": "string" },
+        "valor": { "type": "number" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["lotId", "arrematanteId", "valor"]
+    }
+  },
+  "firestore": {
+    "/arrematantes/{userId}": {
+      "schema": "arrematante",
+      "description": "Cadastro de arrematantes do leilão"
+    },
+    "/lances/{lanceId}": {
+      "schema": "lance",
+      "description": "Registro de lances do auditório"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Pátio RP Leilões",
+  "description": "Pátio RP Leilões: leilões oficiais de carros, motos, pesados, imóveis e materiais com qualidade, preços competitivos e oportunidades para todo o Brasil.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

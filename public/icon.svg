@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b2c4d" />
+      <stop offset="100%" stop-color="#051626" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3C68F" />
+      <stop offset="50%" stop-color="#B8874C" />
+      <stop offset="100%" stop-color="#8F5E24" />
+    </linearGradient>
+    <filter id="drop" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+  <!-- Background with slight rounded corners for standalone icon -->
+  <rect width="512" height="512" rx="96" fill="url(#bgGrad)" />
+  
+  <!-- Outer Gold Ring -->
+  <circle cx="256" cy="230" r="160" fill="none" stroke="url(#goldGrad)" stroke-width="6" opacity="0.4" />
+  
+  <!-- Gavel Icon -->
+  <g transform="translate(256,210) rotate(-35) translate(-256,-210)" filter="url(#drop)">
+    <!-- Gavel Head -->
+    <rect x="216" y="110" width="80" height="48" rx="8" fill="url(#goldGrad)" />
+    <rect x="206" y="102" width="100" height="14" rx="4" fill="#FDF3E7" />
+    <rect x="206" y="152" width="100" height="14" rx="4" fill="#8F5E24" />
+    <!-- Gavel Handle -->
+    <rect x="246" y="158" width="20" height="150" rx="6" fill="url(#goldGrad)" />
+    <circle cx="256" cy="318" r="14" fill="#FDF3E7" />
+    <!-- Sound Block -->
+    <rect x="180" y="300" width="152" height="24" rx="6" fill="url(#goldGrad)" opacity="0.9" />
+  </g>
+
+  <!-- RP Brand typography -->
+  <text x="256" y="420" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="900" fill="#FFFFFF" letter-spacing="4">
+    PÁTIO RP
+  </text>
+  <text x="256" y="455" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" fill="#B8874C" letter-spacing="6">
+    LEILÕES OFICIAIS
+  </text>
+</svg>
